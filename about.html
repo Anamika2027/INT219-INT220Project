@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - myScheme</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4fdf4;
+            margin: 0;
+            padding: 0;
+        }
+        .title {
+            text-align: center;
+            font-size: 32px;
+            font-weight: bold;
+            color: #2b7a2e;
+            margin-top: 20px;
+        }
+        .breadcrumb {
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+            color: #2b7a2e;
+        }
+        .breadcrumb a {
+            text-decoration: none;
+            color: #2b7a2e;
+        }
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            max-width: 90%;
+            height: 80vh;
+            margin: 20px auto;
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1%;
+        }
+        .video-container, .content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            height: 90%;
+        }
+
+        
+        iframe {
+            width: 100%;
+            height: 90%;
+            border-radius: 10px;
+        }
+        .content {
+            text-align: left;
+            padding-left: 20px;
+        }
+        .content h2 {
+            color: #2b7a2e;
+        }
+        .content p {
+            color: #333;
+            font-size: 20px;
+            width: 90%;
+        }
+    </style>
+</head>
+<body>
+    <div class="title">About Us</div>
+    <div class="breadcrumb">
+        <a href="#">Home</a> > <a href="#">About Us</a>
+    </div>
+    <div class="container">
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/bNOWkB-6cmc" allowfullscreen></iframe>
+        </div>
+        <div class="content">
+            <h2>Our Vision</h2>
+            <p>Our vision is to make citizens' lives easier.</p>
+            <h2>Our Mission</h2>
+            <p>Our mission is to streamline the government-user interface for government schemes and benefits.</p>
+            <p>Reduce time and effort required to find and avail a government scheme.</p>
+        </div>
+    </div>
+</body>
+</html>
