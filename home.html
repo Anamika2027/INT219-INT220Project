@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>myScheme UI</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+</head>
+<body>
+  
+   <div class="header">
+    <div class="left-section">
+      <img height="40" src="i1.png" alt="">
+      <h1 class="logo">Sansad adarsh <span>Gram yojana</span></h1>
+      <img height="50" src="i2.png" alt="">
+    </div>
+    
+    <div class="right-container">
+      <div class="right-section">
+          <button class="sign-in" onclick="window.location.href='login.php'">Sign-In</button>
+        
+        <button class="theme-toggle" onclick="toggleTheme()">☀️</button>
+        <div class="hamburger" onclick="toggleSidebar()">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </div>
+      </div>
+    </div>
+    
+    
+    <div id="sidebar" class="sidebar">
+      <button class="close-btn" onclick="toggleSidebar()">×</button>
+      <ul class="sidebar-links">
+        <li><a href="home.html"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="about.html"><i class="fas fa-bullhorn"></i> About</a></li>
+        <li><a href="faqnew.html"><i class="fas fa-info-circle"></i> FAQs</a></li>
+        <li><a href="PROJECT/contact us/contact.html"><i class="fas fa-envelope"></i> Contact Us</a></li>
+
+      </ul>
+    </div>
+    
+      
+  </div>
+  
+  <br><br><br><br><br><br> 
+  <div class="slider-container">
+    <div class="pictures" id="slider">
+      <img src="https://saanjhi.gov.in/assets/image/slider/slider4.jpg" alt="">
+      <img src="https://saanjhi.gov.in/assets/image/slider/slider2.jpg" alt="">
+      <img src="https://saanjhi.gov.in/assets/image/slider/slider1.jpg" alt="">
+    </div>
+    <button class="btn prev" onclick="changeSlide(-1)">&#10094;</button>
+    <button class="btn next" onclick="changeSlide(1)">&#10095;</button>
+  </div>
+
+ 
+  <div class="both">
+    <div class="st" style="padding: 20px; max-width: 600px; font-family: Arial, sans-serif;">
+      <h2 style="color: #333; border-bottom: 1px solid #eee; padding-bottom: 10px;">Statement of Hon'ble PM</h2>
+      <blockquote style="font-style: italic; color: #555; margin: 20px 0; padding-left: 15px; border-left: 3px solid #90EE90;">
+          "The Saansad Adarsh Gram Yojana, unlike other Schemes, does not look at the beneficiaries as receivers and the Government as the doer. The Yojana aims to empower the villagers to make choices and provide them with opportunities to exercise those choices. The Scheme will give direction and I am certain that our ingenuous villagers will pave their own path through their hard work and entrepreneurial skills."
+      </blockquote>
+      <p style="text-align: right; font-weight: bold; color: #333;">Shri Narendra Modi, Hon'ble Prime Minister</p>
+      <a href="https://example.com/read-more" target="_blank" style="display: inline-block; background-color: green; color: white; padding: 8px 15px; text-decoration: none; border-radius: 4px; margin-top: 10px; cursor: pointer;">Read More ▶</a>
+    </div>
+    <img src="sc.png" alt="Image" style="width: 100%; max-width: 600px; height: auto; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+  </div>
+<br><br><br><br><br><br>
+  <div class="section-title">How it works</div>
+  <div class="section-subtitle">Easy steps to apply for Government Schemes</div>
+  
+  <div class="steps-container">
+      <div class="step-card">
+        <img src="https://cdn.myscheme.in/images/icons/check.svg" alt="">
+          <div class="step-number">1</div>
+          <div class="step-title">Enter Details</div>
+          <div class="step-description">Start by entering your basic details!</div>
+      </div>
+      
+      <div class="step-card">
+        <img src="https://cdn.myscheme.in/images/icons/search.svg" alt="">
+          <div class="step-number">2</div>
+          <div class="step-title">Search</div>
+          <div class="step-description">Explore scheme convergence!</div>
+      </div>
+      
+      <div class="step-card">
+        <img src="https://cdn.myscheme.in/images/icons/apply.svg" alt="">
+          <div class="step-number">3</div>
+          <div class="step-title">Select & Apply</div>
+          <div class="step-description">Select and apply for the best suited scheme</div>
+      </div>
+  </div>
+  <br><br><br><br><br><br>
+  <div class="content-wrapper">
+    <div class="about-container">
+        <h2 class="about-title">About</h2>
+        <div class="about-content">
+            <p>myScheme is a National Platform that aims to offer one-stop search and discovery of the Government schemes.</p>
+            <p>It provides an innovative, technology-based solution to discover scheme information based upon the eligibility of the citizen.</p>
+            <p>The platform helps the citizen to find the right Government schemes for them. It also guides on how to apply for different Government schemes. Thus no need to visit multiple Government websites.</p>
+        </div>
+        <button class="view-more-btn" onclick="window.location.href='aboutnew.html'">View More</button>
+    </div>
+    
+    <div class="video-container">
+        <h2 class="about-title">How It Works</h2>
+        <div class="video-wrapper">
+            <iframe src="https://www.youtube.com/embed/bNOWkB-6cmc" allowfullscreen></iframe>
+          
+        </div>
+    </div>
+  </div>
+
+  <div class="faq">
+    <div class="img" style="margin: 90px 0px 30px 80px;">
+      <img height="300" src="https://cdn.myscheme.in/images/questions.svg" alt="">
+    </div>
+   
+    <div class="q">
+        <div class="box" onclick="toggleAnswer('answer1')">
+             Q1. What is the inspiration for Saansad Adarsh Gram Yojana (SAGY)?
+             <div class="answer" id="answer1">The inspiration for SAGY is Mahatma Gandhi's vision of rural development and self-reliant villages.</div>
+        </div>
+        <div class="box" onclick="toggleAnswer('answer2')">
+             Q2. What is the goal of Saansad Adarsh Gram Yojana (SAGY)?
+             <div class="answer" id="answer2">The goal of SAGY is to develop model villages as examples of sustainable development and social harmony.</div>
+        </div>
+        <div class="box" onclick="toggleAnswer('answer3')">
+             Q3. What are the values that Saansad Adarsh Gram Yojana (SAGY) propagates?
+             <div class="answer" id="answer3">SAGY propagates values like participatory democracy, transparency, and inclusiveness.</div>
+        </div>
+        <div class="box" onclick="toggleAnswer('answer4')">
+             Q4. What are the main objectives of SAGY?
+             <div class="answer" id="answer4">The objectives are holistic development of villages and improving villagers' quality of life.</div>
+        </div>
+        <div class="box" onclick="toggleAnswer('answer5')">
+             Q5. What are the challenges related to local-level development?
+             <div class="answer" id="answer5">Challenges include resource constraints, poor infrastructure, and social inequalities.</div>
+        </div>
+        <button class="view-more-btn" style="width: 160px; margin-bottom: 20px;" onclick="location.href='faqnew.html'">View More</button>
+    </div>
+  </div>
+
+  <!-- footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-section">
+        <h3>Sansad adarsh gram yojana</h3>
+        <p>Powered by </p>
+        <img height="50" src="i2.png" alt="">
+        <ul >
+          <li  style="font-size: 8px;" ><strong>Device</strong></li>
+          <li  style="font-size: 8px;">Digital India Corporation</li>
+          <li style="font-size: 8px;" >Ministry of Electronics & IT </li>
+          <li  style="font-size: 8px;">Government of India</li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">Frequently Asked Questions</a></li>
+        </ul>
+      </div>
+      
+    
+      <div class="footer-section">
+        <h3>Get in touch</h3>
+        <p>Jim Floor, NGO, Welcome, & CEO</p>
+        <p>Complete Login (Saudi New Delhi - 11000)</p>
+        <p>Mail:</p>
+        <p>support:</p>
+        <p>mmschmw@dipbucketadobe@portfolio</p>
+        <p>01/12/2027 14:04 AM to $.38 PM</p>
+      </div>
+    </div>
+    
+    <div class="copyright">
+      &copy; 2025 myScheme. All Rights Reserved.
+    </div>
+  </footer>
+
+  <script>
+    //faq
+    function toggleAnswer(id) {
+      const answer = document.getElementById(id);
+      answer.style.display = (answer.style.display === "block") ? "none" : "block";
+    }
+
+    //slider
+    let currentIndex = 0;
+
+    function changeSlide(direction) {
+      const slider = document.getElementById('slider');
+      const images = document.querySelectorAll('#slider img');
+      const totalImages = images.length;
+      
+      currentIndex += direction;
+      if (currentIndex < 0) {
+        currentIndex = totalImages - 1;
+      } else if (currentIndex >= totalImages) {
+        currentIndex = 0;
+      }
+      
+      slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+
+    // Auto slide change every 5 seconds
+    setInterval(() => {
+      changeSlide(1);
+    }, 5000);
+
+    function toggleSidebar() {
+      const sidebar = document.getElementById('sidebar');
+      sidebar.classList.toggle('open');
+    }
+
+    
+    function toggleTheme() {
+      const body = document.body;
+      const toggleBtn = document.querySelector('.theme-toggle');
+      
+      body.classList.toggle('dark-mode');
+
+      // Switch icon ☀️ / 🌙
+      if (body.classList.contains('dark-mode')) {
+        toggleBtn.textContent = '🌙';
+      } else {
+        toggleBtn.textContent = '☀️';
+      }
+    }
+
+
+  </script>
+</body>
+</html>
