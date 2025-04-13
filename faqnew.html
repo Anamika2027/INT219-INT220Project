@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <title>Frequently Asked Questions - myScheme</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5fdf4;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .faq-header {
+            font-size: 32px;
+            font-weight: bold;
+            color: #228B22;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        /* Header */
+        .header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px;
+        background-color: #fff;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 10;
+        }
+
+        .left-section, .right-section {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        }
+        .right-section {
+        gap: 40px;
+        }
+
+        .sidebar-links i {
+        margin-right: 10px;
+        width: 20px;
+        text-align: center;
+        }
+
+
+        .logo {
+        font-size: 28px;
+        color: #333;
+        margin: 0 10px;
+        }
+        .logo span {
+        color: #4CAF50;
+        }
+
+        .emblem, .digital-india {
+        height: 50px;
+        }
+
+        .sign-in {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 20px;
+        cursor: pointer;
+        }
+
+        .language-toggle {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        font-size: 16px;
+        }
+
+        .theme-toggle {
+        background-color: #333;
+        color: white;
+        border: none;
+        padding: 10px;
+        border-radius: 100%;
+        cursor: pointer;
+        }
+
+        /* Hamburger */
+        .hamburger {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        cursor: pointer;
+        width: 25px;
+        height: 20px;
+        margin-left: 20px;
+        }
+        .hamburger .bar {
+        height: 3px;
+        width: 100%;
+        background-color: #333;
+        border-radius: 2px;
+        }
+
+        /* Sidebar */
+        .sidebar {
+        position: fixed;
+        top: 0;
+        right: -80%;
+        width: 20%;
+        height: 100%;
+        background-color: #2e8b57;
+        color: white;
+        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+        transition: right 0.3s ease;
+        z-index: 999;
+        padding: 40px 30px;
+        }
+        .sidebar.open {
+        right: 0;
+        }
+        .close-btn {
+        background: none;
+        border: none;
+        font-size: 30px;
+        color: white;
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        cursor: pointer;
+        }
+
+        .sidebar-links {
+        list-style: none;
+        padding: 80px 0 0;
+        margin: 0;
+        }
+        .sidebar-links li {
+        margin-bottom: 30px;
+        }
+        .sidebar-links a {
+        text-decoration: none;
+        color: white;
+        font-size: 20px;
+        font-weight: 500;
+        transition: color 0.3s;
+        }
+        .sidebar-links a:hover {
+        color: #dfffe0;
+        }
+
+        /* Section Titles */
+        .section-title {
+        text-align: center;
+        font-size: 32px;
+        color: #333;
+        margin-bottom: 10px;
+        border: 2px solid white;
+        }
+
+        .section-subtitle {
+        text-align: center;
+        font-size: 18px;
+        color: #666;
+        margin-bottom: 50px;
+        }
+
+
+        /* Dark mode*/
+        body.dark-mode {
+        background-color: #121212;
+        color: #ffffff;
+        }
+
+        /* Generic adjustments for dark mode */
+        body.dark-mode .header,
+        body.dark-mode .about-container,
+        body.dark-mode .video-container,
+        body.dark-mode .step-card,
+        body.dark-mode .faq-container,
+        body.dark-mode .sidebar,
+        body.dark-mode footer {
+        background-color: #1e1e1e;
+        color: #ffffff;
+        }
+
+        body.dark-mode .sidebar-links a {
+        color: #ffffff;
+        }
+
+        body.dark-mode .sidebar-links a:hover {
+        color: #90EE90;
+        }
+
+        body.dark-mode .sign-in,
+        body.dark-mode .theme-toggle {
+        background-color: #ffffff;
+        color: #121212;
+        }
+
+        body.dark-mode .theme-toggle::after {
+        content: '';
+        }
+
+        /* Dark mode image specific */
+        /* Dark mode styles */
+        body.dark-mode {
+        background-color: #121212;
+        color: #ffffff;
+        }
+
+        /* Invert images inside dark mode */
+        body.dark-mode img {
+        filter: brightness(0.6) contrast(1.2);
+        }
+
+        /* Optional: darken iframe (YouTube video) slightly */
+        body.dark-mode iframe {
+        filter: brightness(0.9);
+        }
+
+        /* Offset content to appear below fixed header */
+        body {
+            padding-top: 100px; /* Adjust according to your header height */
+        }
+
+        /* FAQ item styling */
+        .faq-item {
+            margin-top: 15px;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+            cursor: pointer;
+            color: #333; /* default text color */
+        }
+
+        /* Hover effect for light mode */
+        .faq-item:hover {
+            background-color: #f0f8ff;
+        }
+
+        /* Hover + text fix for dark mode */
+        body.dark-mode .faq-item {
+            color: #fff;
+            border-bottom: 1px solid #444;
+        }
+        body.dark-mode .faq-item:hover {
+            background-color: #2c2c2c; /* subtle dark hover */
+        }
+
+
+
+        /* FAQ Section */
+
+        .faq-container {
+            width: 90%;
+            height: 80vh;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .faq-image {
+            flex: 1;
+            text-align: center;
+        }
+        .faq-image img {
+            max-width: 80%; /* Reduced from 100% to 80% */
+            height: auto;
+        }
+        .faq-content {
+            flex: 1;
+            padding-left: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 90%;
+        }
+        .faq-item {
+            margin-top: 15px;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+            cursor: pointer;
+        }
+        .faq-item:hover {
+            background-color: #f0f8ff;
+        }
+        .faq-item h3 {
+            margin: 0;
+            font-size: 18px;
+        }
+        .faq-answer {
+            display: none;
+            margin-top: 10px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="left-section">
+          <img height="40" src="i1.png" alt="">
+          <h1 class="logo">Sansad adarsh <span>Gram yojana</span></h1>
+          <img height="50" src="i2.png" alt="">
+        </div>
+        
+        <div class="right-container">
+          <div class="right-section">
+              
+            <button class="theme-toggle" onclick="toggleTheme()">☀</button>
+            <div class="hamburger" onclick="toggleSidebar()">
+              <div class="bar"></div>
+              <div class="bar"></div>
+              <div class="bar"></div>
+            </div>
+          </div>
+        </div>
+        
+        
+        <div id="sidebar" class="sidebar">
+          <button class="close-btn" onclick="toggleSidebar()">×</button>
+          <ul class="sidebar-links">
+            <li><a href="home.html"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="about.html"><i class="fas fa-bullhorn"></i> About</a></li>
+            <li><a href="faqnew.html"><i class="fas fa-info-circle"></i> FAQs</a></li>
+            <li><a href="PROJECT/contact us/contact.html"><i class="fas fa-envelope"></i> Contact Us</a></li>
+            
+    
+          </ul>
+        </div>
+        
+          
+      </div>
+
+    <div class="faq-header">Frequently Asked Questions</div>
+    <div class="faq-container">
+        <div class="faq-image">
+            <img src="https://cdn.myscheme.in/images/questions.svg" alt="FAQ Illustration">
+        </div>
+        
+        <div class="faq-content">
+            <div class="faq-item" onclick="toggleFAQ(this)">
+                <h3>Q1. What is the inspiration for Saansad Adarsh Gram Yojana (SAGY)?</h3>
+                <div class="faq-answer" id="answer1">The inspiration for SAGY is Mahatma Gandhi's vision of rural development and self-reliant villages.</div>
+            </div>
+            <div class="faq-item" onclick="toggleFAQ(this)">
+                <h3>Q2. What is the goal of Saansad Adarsh Gram Yojana (SAGY)?</h3>
+                <div class="faq-answer" id="answer2">The goal of SAGY is to develop model villages as examples of sustainable development and social harmony.</div>
+            </div>
+            <div class="faq-item" onclick="toggleFAQ(this)">
+                <h3>Q3. What are the values that Saansad Adarsh Gram Yojana (SAGY) propagates?</h3>
+                <div class="faq-answer" id="answer3">SAGY propagates values like participatory democracy, transparency, and inclusiveness.</div>
+            </div>
+            <div class="faq-item" onclick="toggleFAQ(this)">
+                <h3>Q4. What are the main objectives of SAGY?</h3>
+                <div class="faq-answer" id="answer4">The objectives are holistic development of villages and improving villagers' quality of life.</div>
+            </div>
+            <div class="faq-item" onclick="toggleFAQ(this)">
+                <h3>Q5. What are the challenges related to local-level development?</h3>
+                <div class="faq-answer" id="answer5">Challenges include resource constraints, poor infrastructure, and social inequalities.</div>
+            </div>
+            <div class="faq-item" onclick="toggleFAQ(this)">
+                <h3>Q6. What should be the approach to achieve the SAGY objectives?</h3>
+                <div class="faq-answer" id="answer6">The approach should be participatory and focus on sustainable development.</div>
+            </div>
+            <div class="faq-item" onclick="toggleFAQ(this)">
+                <h3>Q7. What areas should SAGY activities focus upon?</h3>
+                <div class="faq-answer" id="answer7">SAGY focuses on health, education, sanitation, and infrastructure development.</div>
+            </div>
+            <div class="faq-item" onclick="toggleFAQ(this)">
+                <h3>Q8. What activities support personal development of villagers?</h3>
+                <div class="faq-answer" id="answer8">Personal development activities include skill training, vocational programs, and financial literacy.</div>
+            </div>
+    </div>
+
+    <script>
+        function toggleFAQ(element) {
+            let answer = element.querySelector(".faq-answer");
+            if (answer.style.display === "block") {
+                answer.style.display = "none";
+            } else {
+                answer.style.display = "block";
+            }
+        }
+
+        function toggleSidebar() {
+          const sidebar = document.getElementById('sidebar');
+          sidebar.classList.toggle('open');
+        }
+    
+        
+        function toggleTheme() {
+          const body = document.body;
+          const toggleBtn = document.querySelector('.theme-toggle');
+          
+          body.classList.toggle('dark-mode');
+    
+          // Switch icon ☀️ / 🌙
+          if (body.classList.contains('dark-mode')) {
+            toggleBtn.textContent = '🌙';
+          } else {
+            toggleBtn.textContent = '☀';
+          }
+        }
+
+    </script>
+</body>
+</html>
